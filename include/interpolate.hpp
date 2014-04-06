@@ -6,6 +6,8 @@
 //equations specifically with
 //SFML in mind
 //
+//Adapted from c++ port by Jesus Gollonet
+//http://www.jesusgollonet.com/blog/2007/09/24/penner-easing-cpp
 //t: start time
 //b: starting value being interpolated
 //c: change in value
@@ -13,7 +15,6 @@
 /////////////////////////////////
 
 #include <math.h>
-#include <algorithm>
 
 #define PI 3.14
 
@@ -21,7 +22,7 @@ class interpolate
 {
     public:
         interpolate();
-        virtual ~interpolate();
+        ~interpolate();
 
         static float linear(float t, float b, float c, float d);
         static float expoEaseIn(float t, float b, float c, float d);
@@ -51,12 +52,6 @@ class interpolate
         static float elasticEaseIn(float t, float b, float c, float d);
         static float elasticEaseOut(float t, float b, float c, float d);
         static float elasticEaseInOut(float t, float b, float c, float d);
-        static float bounceEaseIn(float t, float b, float c, float d);
-        static float bounceEaseOut(float t, float b, float c, float d);
-        static float bounceEaseHelper(float t, float b, float c, float d);
-        static float bounceEaseInOut(float t, float b, float c, float d);
-
-    public:
 };
 
 #endif // INTERPOLATE_HPP
