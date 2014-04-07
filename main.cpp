@@ -8,6 +8,8 @@
 int main(void)
 {
     sf::RenderWindow window(sf::VideoMode(800,600,32), "Robert Penner's Easing Equations with SFML", sf::Style::Default);
+    window.setFramerateLimit(60);
+
     sf::Event e;
     bool running = true;
 
